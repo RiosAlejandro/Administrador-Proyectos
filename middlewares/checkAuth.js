@@ -2,8 +2,8 @@ import jwt from "jsonwebtoken";
 import Usuario from "../models/Usuario.js";
 
 const checkAuth = async (req, res, next) => {
+  let token;
   if(req.headers.authorization && req.headers.authorization.starsWith("Bearer")) {
-    let token;
     try {
       token = req.headers.authorization.split(" ")[1];
 

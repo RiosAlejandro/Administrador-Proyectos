@@ -12,7 +12,6 @@ const registrar = async (req, res) => {
     const error = new Error("Usuario ya registrado");
     return res.status(400).json({msg: error.message});
   }
-
   try {
     const usuario = new Usuario(req.body);
     usuario.token = generarId();
@@ -21,8 +20,8 @@ const registrar = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-
-  res.send("polentelme lcdtm!");
+  
+  //res.send("polentelme lcdtm!");
 };
 
 const autenticar = async (req, res) => {
