@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const proyectosSchema = mongoose.Schema({
+const tareaSchema = mongoose.Schema({
   nombre: {
     type: String,
     trim: true,
@@ -11,30 +11,27 @@ const proyectosSchema = mongoose.Schema({
     trim: true,
     required: true,
   },
+  estado: {
+    type: Boolean,
+    default: false,
+  },
   fechaEntrega: {
     type: Date,
+    required: true,
     default: Date.now(),
   },
-  cliente: {
+  prioridad: {
     type: String,
-    trim: true,
     required: true,
+    enum: ["Baja", "Media", "Alta"],
   },
-  creador: {
+  proyecto: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Usuario",
-  },
-  colaboradores: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Usuario",
-    }
-  ],
-
-}, 
-{
+    ref: "Proyecto",
+  }
+}, {
   timestamps: true,
 });
 
-const Proyecto = mongoose.model("Proyecto", proyectosSchema);
-export default Proyecto;
+const Tarea = mongoose.model("Tarea", tareaSchema);
+export default Tarea;
