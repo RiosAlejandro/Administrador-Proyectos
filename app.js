@@ -14,6 +14,7 @@ conectarBD();
 
 //routing
 app.use("/api/usuarios", usuarioRoutes);
+app.use("/api/proyectos", usuarioRoutes);
 
 const port = process.env.PORT || 4000;
 
