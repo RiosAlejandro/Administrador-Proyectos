@@ -6,8 +6,7 @@ import {
   editarProyecto,
   eliminarProyecto,
   agregarColaborador,
-  eliminarColaborador,
-  obtenerTareas, } from "../controllers/proyectoController";
+  eliminarColaborador,} from "../controllers/proyectoController";
 import checkAuth from "../middlewares/checkAuth.js";
 
 const router = express.Router();
@@ -19,7 +18,7 @@ router.get("/:id", checkAuth, obtenerProyecto);
 router.put("/:id", checkAuth, editarProyecto);
 router.delete("/:id", checkAuth, eliminarProyecto);
 
-router.get("/tareas/:id", checkAuth, obtenerTareas);
+//router.get("/tareas/:id", checkAuth, obtenerTareas);
 router.post("/tareas/:id", checkAuth, agregarColaborador);
 router.post("/tareas/:id", checkAuth, eliminarColaborador);
 
