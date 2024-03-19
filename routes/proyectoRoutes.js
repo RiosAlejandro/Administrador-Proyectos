@@ -6,7 +6,7 @@ import {
   editarProyecto,
   eliminarProyecto,
   agregarColaborador,
-  eliminarColaborador,} from "../controllers/proyectoController";
+  eliminarColaborador,} from "../controllers/proyectoController.js";
 import checkAuth from "../middlewares/checkAuth.js";
 
 const router = express.Router();

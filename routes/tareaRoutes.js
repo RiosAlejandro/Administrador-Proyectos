@@ -4,7 +4,7 @@ import {
   obtenerTarea,
   actualizarTarea,
   eliminarTarea,
-  cambiarEstado, } from "../models/Tarea.js";
+  cambiarEstado, } from "../controllers/tareaController.js";
 import checkAuth from "../middlewares/checkAuth.js";
 
 const router = Express.Router();

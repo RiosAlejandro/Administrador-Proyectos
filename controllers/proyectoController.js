@@ -1,4 +1,4 @@
-import Proyecto from "../models/Proyecto";
+import Proyecto from "../models/Proyecto.js";
 import Tarea from "../models/Tarea.js";
 
 const obtenerProyectos = async (req, res) => {
